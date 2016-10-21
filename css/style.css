@@ -1,0 +1,447 @@
+.hide  {
+  /* alternative way to hide which then allows transitions */
+  font-size: 0;
+  width: 0;
+  height: 0;
+  /* transition: property duration timing-function delay|initial|inherit; */
+  /* default timing-function is ease */
+  -webkit-transition: all .25s;
+  -moz-transition: all .25s;
+  -o-transition: all .25s;
+  transition: all .25s;
+}
+
+.unhide {
+  font-size: 1.6rem;
+  width: auto;
+  height: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  /* below will make 1 rem = 10px; */
+  font-size: 62.5%;
+}
+
+/* font-family: 'Open Sans', sans-serif; */
+body {
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.6rem; /* 16px */
+}
+
+#container {
+  /* at this time, #container is useless */
+  /*padding: 0 1rem;*/
+}
+
+header {
+  position: relative;
+  padding: 0;
+  /*background-color: #ddd;*/
+}
+
+#header-main {
+  position: relative;
+  height: 8rem;
+  z-index: 10;
+  box-shadow: 0 2px 3px 0px rgba(255,255,255, 0.5);
+  background-color: rgba(31, 31, 31, 0.9); /* #333 */
+  -webkit-transition: all .25s;
+  -moz-transition: all .25s;
+  -o-transition: all .25s;
+  transition: all .25s;
+}
+
+h1 {
+  /* next line is mobile margin */
+  margin: 1rem 0 1rem 6rem;
+  /* next line is desktop margin */
+  margin: 1rem 0 1rem 2rem;
+  font-size: 3rem;
+  line-height: 3rem;
+  font-weight: 500;
+  width: 20rem;
+  color: #fff;
+  -webkit-transition: all .25s;
+  -moz-transition: all .25s;
+  -o-transition: all .25s;
+  transition: all .25s;
+}
+
+#title {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #b00;
+  color: #0097c9;
+  color: #78eed1;
+  color: #88eeba;
+}
+
+#hamburger, h1, nav, #search-form {
+  display: inline-block;
+}
+
+#hamburger {
+  position: absolute;
+  z-index: 11;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1rem;
+  text-align: center;
+  font-size: 3rem;
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  color: #fff;
+
+  /* alternate way to hide */
+  font-size: 0;
+  width: 0;
+  height: 0;
+  -webkit-transition: all .25s;
+  -moz-transition: all .25s;
+  -o-transition: all .25s;
+  transition: all .25s;
+}
+
+#hamburger:hover {
+  cursor: pointer;
+}
+
+/* vertically center #topnav (nav) within <header> */
+#topnav {
+  position: absolute;
+  /*padding: 0;*/
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+#ul-topnav, #ul-topnav-sub {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+#ul-topnav {
+  position: absolute;
+  /*width: auto;*/
+  /* vertically center #ul-topnav within #topnav/nav */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -webkit-transition: all .0s;
+  -moz-transition: all .0s;
+  -o-transition: all .0s;
+  transition: all .0s;
+}
+
+#ul-topnav > li {
+  /* don't want #ul-topnav-sub li to display inline-block */
+  display: inline-block;
+}
+
+#ul-topnav a, #ul-topnav span {
+  display: block;
+  padding: 1rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: #fff;
+  -webkit-transition: all .25s;
+  -moz-transition: all .25s;
+  -o-transition: all .25s;
+  transition: all .25s;
+}
+
+#ul-topnav span:hover {
+  cursor: pointer;
+}
+
+#ul-topnav-sub {
+  position: absolute;
+  /*position: relative;*/
+}
+
+#ul-topnav-sub a, #ul-topnav-sub span {
+  /*invert foreground/background colors on submenu */
+  color: rgba(31, 31, 31, 1);
+  /* alternative way to hide which then allows transitions */
+  /* need to remove padding until unhidden;
+    even padding will give element size and expose it */
+  font-size: 0;
+  width: 0;
+  height: 0;
+  padding: 0;
+  /*border-bottom: 1px solid rgba(31, 31, 31, 1.0);*/
+  /* transition: property duration timing-function delay|initial|inherit; */
+  -webkit-transition: all .25s;
+  -moz-transition: all .25s;
+  -o-transition: all .25s;
+  transition: all .25s;
+}
+
+#ul-topnav-sub > li:hover > a, #ul-topnav-sub > li:hover > span {
+  background-color: rgba(255, 255, 255, 1.0);
+}
+
+#ul-topnav-sub {
+  /* invert foreground/background colors on submenu */
+  background-color: rgba(255, 255, 255, 0.85); /* #333 */
+}
+
+#ul-topnav > li:hover > a, #ul-topnav > li:hover > span {
+  background-color: rgba(91, 91, 91, 1.0);
+  /*box-shadow: 0px 1px 1px 1px rgba(255, 255, 255, 0.5), 0px -1px 1px 1px rgba(255, 255, 255, 0.5);*/
+}
+
+#ul-topnav > li:hover #ul-topnav-sub li a,
+#ul-topnav > li:hover #ul-topnav-sub li span {
+  /* show submenu */
+  width: auto;
+  height: auto;
+  font-size: 1.6rem;
+  padding: 1rem;
+  border-top: 1px solid rgba(31, 31, 31, 1.0);
+}
+
+#ul-topnav-sub li:not(:last-child) {
+  /*border-bottom: 1px solid rgba(31, 31, 31, 1.0);*/
+}
+
+#form-search {
+  float: right;
+  margin-right: 2rem;
+}
+
+#header-image {
+  position: relative;
+  height: 34rem; /* 45.9375rem = 735px */
+  /*text-align: center;*/
+  color: #fff;
+  font-weight: 300;
+  /* background: color position/size repeat origin clip attachment image|initial|inherit; */
+  /*background: center top/cover no-repeat url(../images/RTS-scuba-02.JPG);
+  background: #375E79 left top/cover no-repeat url(../images/RTS-scuba-02.JPG);*/
+  background: #375E79 left 28%/cover no-repeat url(../images/RTS-scuba-02.JPG);
+  box-shadow: 0 2px 3px 0px rgba(91, 91, 91, 0.75);
+}
+
+#header-image span {
+  position: absolute;
+  font-size: 3rem;
+  /* I will be shifting this span for small devices */
+  left: 60%;
+  -webkit-transition: all .25s;
+  -moz-transition: all .25s;
+  -o-transition: all .25s;
+  transition: all .25s;
+  /*font-size: 2.75vw;*/
+  font-weight: 600;
+  font-style: italic;
+  /*text-shadow: 1px 1px 0 black,-16px 80px 2px rgba(0, 152, 199, 1);*/
+  text-shadow: 1px 1px 0 black;
+}
+
+#header-image span.small-device {
+  top: 50%;
+  right: 0;
+  /* effectively, hide .small-device */
+  font-size: 0;
+}
+
+#header-image span:first-child {
+  top: 35%;
+}
+
+#header-image span:nth-child(2) {
+  top: 50%;
+}
+
+@media screen and (max-width:1040px) {
+
+  /* shift header-image text/span left */
+  #header-image span {
+    left: 50%;
+  }
+
+}
+
+@media screen and (max-width:890px) {
+
+  /* shift h1 right to accommodate hamburger */
+  h1 {
+    margin-left: 6rem;
+  }
+
+  /* show hamburger */
+  #hamburger {
+    font-size: 3rem;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  /* move menu */
+  #ul-topnav {
+    top: 5.2rem;
+    left: -17.6rem;  /* right edge of menu at left edge of screen */
+    /* NOTE, and remember - since transform was used before, it needs to be
+      specified appropriately here if it needs to be different than it was
+      (which it does in this case), otherwise, the previous spec will be used */
+    transform: translate(0, 0);
+    /* width below needs to accomodate #ul-topnav-sub li width */
+    /*width: 17.6rem;*/
+    /* want bg color here, NOT in desktop, otherwise it would overlay there */
+    background-color: rgba(31, 31, 31, 0.9);
+    -webkit-transition: all .25s;
+    -moz-transition: all .25s;
+    -o-transition: all .25s;
+    transition: all .25s;
+  }
+
+  #ul-topnav > li {
+    /* now want top-level li to stack */
+    display: block;
+  }
+
+  #ul-topnav-sub {
+    /* we want #ul-topnav-sub to push down subsequent #ul-topnav
+      items on expansion, i.e., when hovering on #ul-topnav-sub span */
+    position: relative;
+    top: 0;
+  }
+
+  #hamburger:hover + #ul-topnav {
+    /* slide out #ul-topnav */
+    left: 0;
+  }
+
+  #hamburger:hover {
+    color: #88eeba;
+    font-size: 3.5rem;
+    /* increase vertical height to meet upper edge of #ul-topnav
+      so cursor can traverse down to #ul-topnav without ever
+      not hovering over either hamburger, or #ul-topnav, otherwise,
+      #ul-topnav will slide back to the left and become unexposed */
+    height: 8rem;
+    line-height: 8rem;
+    width: 6rem;
+    left: 0;
+  }
+
+  #ul-topnav:hover {
+    /* need this in order to keep #ul-topnav exposed
+      when cursor leaves hamburger */
+    left: 0;
+  }
+
+}
+
+@media screen and (max-width:720px) {
+  /* display .small-device image text overlay */
+  #header-image span:not(.small-device) {
+    font-size: 0;
+  }
+  #header-image span.small-device {
+    right: auto;
+    left: 55%;
+    font-size: 3rem;
+  }
+  #header-image span:nth-child(3) {
+    top: 25%;
+  }
+  #header-image span:nth-child(4) {
+    top: 35%;
+  }
+  #header-image span:nth-child(5) {
+    top: 50%;
+  }
+  #header-image span:last-child {
+    top: 60%;
+  }
+}
+
+@media screen and (max-width:525px) {
+  /* resize #header-main to accommodate dropping nav/#topnav down */
+  #header-main {
+    height: 12.5rem;
+  }
+  /* center h1 */
+  h1 {
+    /* need to find a way to center */
+    /*margin: 1rem 12rem;*/
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 1rem auto;
+  }
+  /* drop nav/#topnav */
+  #topnav {
+    top: 9.7rem;
+  }
+
+  /* move menu */
+  #ul-topnav {
+    top: 4.0rem;
+  }
+
+  /* reduce font size */
+  #header-image span.small-device {
+    left: 52%;
+    font-size: 2.5rem;
+  }
+  #header-image span:nth-child(3) {
+    top: 28%;
+  }
+  #header-image span:nth-child(4) {
+    top: 36%;
+  }
+  #header-image span:nth-child(5) {
+    top: 48%;
+  }
+  #header-image span:last-child {
+    top: 56%;
+  }
+
+}
+
+@media screen and (max-width:440px) {
+  /* shift background image left to provide more room for text */
+  #header-image {
+    background: #375E79 10% 28%/cover no-repeat url(../images/RTS-scuba-02.JPG);
+  }
+  /* reduce font size */
+  #header-image span.small-device {
+    left: 52%;
+    font-size: 2.25rem;
+  }
+}
+
+@media screen and (max-width:360px) {
+  /* shift background image left to provide more room for text */
+  #header-image {
+    background: #375E79 20% 28%/cover no-repeat url(../images/RTS-scuba-02.JPG);
+  }
+  /* reduce font size */
+  #header-image span.small-device {
+    left: 52%;
+    font-size: 2rem;
+  }
+  #header-image span:nth-child(3) {
+    top: 31%;
+  }
+  #header-image span:nth-child(4) {
+    top: 38%;
+  }
+  #header-image span:nth-child(5) {
+    top: 50%;
+  }
+  #header-image span:last-child {
+    top: 57%;
+  }
+}
