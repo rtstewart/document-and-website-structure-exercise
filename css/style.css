@@ -1,22 +1,3 @@
-.hide  {
-  /* alternative way to hide which then allows transitions */
-  font-size: 0;
-  width: 0;
-  height: 0;
-  /* transition: property duration timing-function delay|initial|inherit; */
-  /* default timing-function is ease */
-  -webkit-transition: all .25s;
-  -moz-transition: all .25s;
-  -o-transition: all .25s;
-  transition: all .25s;
-}
-
-.unhide {
-  font-size: 1.6rem;
-  width: auto;
-  height: auto;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -51,10 +32,10 @@ header {
   z-index: 10;
   box-shadow: 0 2px 3px 0px rgba(255,255,255, 0.5);
   background-color: rgba(31, 31, 31, 0.9); /* #333 */
-  -webkit-transition: all .25s;
-  -moz-transition: all .25s;
-  -o-transition: all .25s;
-  transition: all .25s;
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+  -o-transition: all .35s;
+  transition: all .35s;
 }
 
 h1 {
@@ -67,10 +48,10 @@ h1 {
   font-weight: 500;
   width: 20rem;
   color: #fff;
-  -webkit-transition: all .25s;
-  -moz-transition: all .25s;
-  -o-transition: all .25s;
-  transition: all .25s;
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+  -o-transition: all .35s;
+  transition: all .35s;
 }
 
 #title {
@@ -100,13 +81,14 @@ h1 {
   color: #fff;
 
   /* alternate way to hide */
-  font-size: 0;
-  width: 0;
+  overflow-y: hidden;
+  /*font-size: 0;*/
+  /*width: 0;*/
   height: 0;
-  -webkit-transition: all .25s;
-  -moz-transition: all .25s;
-  -o-transition: all .25s;
-  transition: all .25s;
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+  -o-transition: all .35s;
+  transition: all .35s;
 }
 
 #hamburger:hover {
@@ -136,10 +118,10 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  -webkit-transition: all .0s;
-  -moz-transition: all .0s;
-  -o-transition: all .0s;
-  transition: all .0s;
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+  -o-transition: all .35s;
+  transition: all .35s;
 }
 
 #ul-topnav > li {
@@ -153,10 +135,10 @@ h1 {
   font-weight: 400;
   text-decoration: none;
   color: #fff;
-  -webkit-transition: all .25s;
-  -moz-transition: all .25s;
-  -o-transition: all .25s;
-  transition: all .25s;
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+  -o-transition: all .35s;
+  transition: all .35s;
 }
 
 #ul-topnav span:hover {
@@ -174,16 +156,17 @@ h1 {
   /* alternative way to hide which then allows transitions */
   /* need to remove padding until unhidden;
     even padding will give element size and expose it */
-  font-size: 0;
-  width: 0;
+ /* font-size: 0;
+  width: 0;*/
   height: 0;
   padding: 0;
+  overflow-y: hidden;
   /*border-bottom: 1px solid rgba(31, 31, 31, 1.0);*/
   /* transition: property duration timing-function delay|initial|inherit; */
-  -webkit-transition: all .25s;
-  -moz-transition: all .25s;
-  -o-transition: all .25s;
-  transition: all .25s;
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+  -o-transition: all .35s;
+  transition: all .35s;
 }
 
 #ul-topnav-sub > li:hover > a, #ul-topnav-sub > li:hover > span {
@@ -203,9 +186,9 @@ h1 {
 #ul-topnav > li:hover #ul-topnav-sub li a,
 #ul-topnav > li:hover #ul-topnav-sub li span {
   /* show submenu */
-  width: auto;
+  /*width: auto;*/
   height: auto;
-  font-size: 1.6rem;
+  /*font-size: 1.6rem;*/
   padding: 1rem;
   border-top: 1px solid rgba(31, 31, 31, 1.0);
 }
@@ -237,10 +220,10 @@ h1 {
   font-size: 3rem;
   /* I will be shifting this span for small devices */
   left: 60%;
-  -webkit-transition: all .25s;
-  -moz-transition: all .25s;
-  -o-transition: all .25s;
-  transition: all .25s;
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+  -o-transition: all .35s;
+  transition: all .35s;
   /*font-size: 2.75vw;*/
   font-weight: 600;
   font-style: italic;
@@ -298,10 +281,6 @@ h1 {
     /*width: 17.6rem;*/
     /* want bg color here, NOT in desktop, otherwise it would overlay there */
     background-color: rgba(31, 31, 31, 0.9);
-    -webkit-transition: all .25s;
-    -moz-transition: all .25s;
-    -o-transition: all .25s;
-    transition: all .25s;
   }
 
   #ul-topnav > li {
